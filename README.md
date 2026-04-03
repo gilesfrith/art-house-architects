@@ -58,7 +58,7 @@ cd ~/Downloads/art-house-architects
 git init
 git add .
 git commit -m "initial commit"
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/art-house-architects.git
+git remote add origin git@github.com:gilesfrith/art-house-architects.git
 git branch -M main
 git push -u origin main
 ```
