@@ -1,0 +1,35 @@
+.footer {
+  background: #141210;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 28px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+.links a {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--accent-light);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

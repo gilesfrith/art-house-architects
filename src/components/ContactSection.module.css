@@ -1,0 +1,53 @@
+.section {
+  background: var(--bg-dark);
+  color: var(--white);
+  padding: 100px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.heading {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.detail {
+  margin-bottom: 24px;
+}
+
+.detailLabel {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 4px;
+}
+
+.detailValue {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+.detailValue a {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.detailValue a:hover {
+  color: var(--accent-light);
+}
+
+@media (max-width: 900px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 72px 24px;
+  }
+}

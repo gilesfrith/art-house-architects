@@ -1,0 +1,255 @@
+/* ── Hero ── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  animation: heroZoom 8s ease forwards;
+}
+
+@keyframes heroZoom {
+  to { transform: scale(1); }
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(28, 26, 23, 0.65) 0%,
+    rgba(28, 26, 23, 0.1) 50%,
+    transparent 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  padding: 0 64px 80px;
+  color: var(--white);
+  animation: fadeUp 1.2s 0.4s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.heroEyebrow {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 16px;
+}
+
+.heroTitle {
+  font-family: var(--serif);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.heroSub {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 420px;
+  line-height: 1.8;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 36px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 4px;
+  transition: border-color 0.2s, gap 0.2s;
+}
+
+.heroCta:hover {
+  border-color: var(--white);
+  gap: 18px;
+}
+
+.scrollDot {
+  position: absolute;
+  bottom: 36px;
+  right: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ── Featured Projects ── */
+.featured {
+  background: var(--white);
+  padding: 100px 64px;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: #e8e3dc;
+  display: block;
+}
+
+.card::after {
+  content: '';
+  display: block;
+  padding-top: 75%;
+}
+
+.card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover img {
+  transform: scale(1.06);
+}
+
+.cardInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 28px 28px;
+  background: linear-gradient(to top, rgba(28, 26, 23, 0.8), transparent);
+  color: var(--white);
+  transform: translateY(8px);
+  transition: transform 0.4s;
+}
+
+.card:hover .cardInfo {
+  transform: translateY(0);
+}
+
+.cardTitle {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.cardSub {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 10px;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s;
+}
+
+.card:hover .cardDesc {
+  max-height: 80px;
+}
+
+.allBtn {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.outlineBtn {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 14px 40px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+
+.outlineBtn:hover {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* ── Philosophy ── */
+.philosophyStrip {
+  background: var(--bg-dark);
+  color: var(--white);
+  padding: 100px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.philosophyQuote {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 300;
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--accent-light);
+  border: none;
+}
+
+.philosophyBody {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.9;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .heroContent { padding: 0 32px 60px; }
+  .scrollDot { right: 32px; }
+  .featured { padding: 72px 24px; }
+  .featuredGrid { grid-template-columns: 1fr; }
+  .philosophyStrip { grid-template-columns: 1fr; gap: 40px; padding: 72px 24px; }
+}
